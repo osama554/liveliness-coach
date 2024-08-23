@@ -174,7 +174,7 @@ function displayClubs(clubs) {
 }
 
 function updateUi(userData, userEvents, userReviews) {
-    console.log(userData, userEvents, userReviews);
+
     const userTotalEvents = userEvents.data.length;
     // UserData
     displayUserData(userData.user, userTotalEvents);
@@ -217,7 +217,6 @@ Promise.all([
         updateUi(userData, userEvents, userReviews);
         hideShimmer();
     })
-    .catch((error) => {
-        console.error('Error fetching data:', error);
+    .catch(() => {
         hideShimmer();
     });

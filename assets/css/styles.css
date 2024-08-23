@@ -374,8 +374,9 @@ span.shimmer-effect {
 .club-card img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 260px;
     object-fit: cover;
+    object-position: center;
 }
 
 .club-text h2 {
@@ -399,7 +400,7 @@ span.shimmer-effect {
     border-radius: 16px;
     overflow: hidden;
     position: relative;
-    max-height: 399px;
+    max-height: 350px;
     height: auto;
 }
 
