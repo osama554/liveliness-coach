@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-html,
 body {
     max-width: 768px;
     margin: 0 auto;
@@ -23,6 +22,36 @@ a {
 
 img {
     max-width: 100%;
+}
+
+.shimmer-effect {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #cecece 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.coach-img-container img.shimmer-effect {
+    width: 100%;
+    height: 112px;
+}
+
+h2.shimmer-effect,
+p.shimmer-effect,
+span.shimmer-effect {
+    width: 100%;
+    height: 20px;
+    display: inline-block;
 }
 
 .main-container {
@@ -70,8 +99,12 @@ img {
     text-align: center;
 }
 
-.coach-text-container p span {
+.coach-text-container span {
+    font-size: 14px;
+    font-weight: 400;
     font-weight: 700;
+    line-height: 19px;
+    color: #E7E7E7;
 }
 
 .coach-desc {
@@ -190,6 +223,10 @@ img {
     overflow: hidden;
     padding-right: 12px;
     align-items: center;
+}
+
+.event-card .event-photo {
+    width: 80px;
 }
 
 .event-card-content {
@@ -361,6 +398,8 @@ img {
     border-radius: 16px;
     overflow: hidden;
     position: relative;
+    max-height: 399px;
+    height: auto;
 }
 
 .club-card span {
@@ -380,7 +419,6 @@ img {
     background-color: #1F1E24;
     padding: 12px 16px;
 }
-
 
 .footer {
     padding: 12px 0 8px 0;

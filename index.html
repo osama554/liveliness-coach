@@ -16,13 +16,12 @@
     <section class="main-container">
         <div class="coach-info">
             <div class="coach-img-container">
-                <img src="./assets/images/coach.svg" alt="Terry Korsgaard">
+                <img class="content" id="userProfileImage" src="" alt="">
             </div>
             <div class="coach-text-container">
-                <h2>Terry Korsgaard</h2>
-                <p>Terry specializes in personal and professional development, leadership coaching, and...
-                    <span>See More</span>
-                </p>
+                <h2 id="userName" class="content"></h2>
+                <p id="userBio" class="content"></p>
+                <span>See More</span>
             </div>
             <div class="coach-desc">
                 <div class="coach-total-reviews">
@@ -30,37 +29,37 @@
                     <h2>4.5</h2>
                 </div>
                 <div class="reviews-count">
-                    <p>100 reviews</p>
+                    <p id="userTotalReviews"></p>
                 </div>
                 <div class="coach-total-reviews">
                     <img class="coach-dot" src="./assets/images/dot.svg" alt="">
-                    <h2>25</h2>
-                    <p>events</p>
+                    <h2 id="userTotalEvents"></h2>
+                    <p id="userEvents"></p>
                 </div>
             </div>
             <div class="coach-socials">
-                <a href="#">
+                <a id="instagramLink" href="#">
                     <img src="./assets/images/instagram.svg" alt="Instagram">
                 </a>
-                <a href="#">
+                <a id="tiktokLink" href="#">
                     <img src="./assets/images/tiktok.svg" alt="Tiktok">
                 </a>
-                <a href="#">
+                <a id="youtubeLink" href="#">
                     <img src="./assets/images//youtube.svg" alt="Youtube">
                 </a>
-                <a href="#">
+                <a id="websiteLink" href="#">
                     <img src="./assets/images/web.svg" alt="Web">
                 </a>
             </div>
             <div class="coach-location">
                 <img src="./assets/images/pin.svg" alt="">
-                <h2>Barcelona, 10 km away.</h2>
+                <h2 id="userLocation"></h2>
             </div>
             <div class="coach-location">
                 <div class="country-image">
-                    <img src="./assets/images/country.svg" alt="Germany">
+                    <img id="countryFlag" src="" alt="Country Flag">
                 </div>
-                <h2><span>Nationality</span> Germany</h2>
+                <h2 id="userNationality"><span></span></h2>
             </div>
         </div>
         <div class="events">
@@ -68,112 +67,20 @@
                 <h2>Calendar</h2>
                 <a href="#">See all</a>
             </div>
-            <div class="events-content">
-                <div class="event-card">
-                    <img src="./assets/images/event.svg" alt="">
-                    <div class="event-card-content">
-                        <h2>Wed, 27 September at 17:00</h2>
-                        <h1>Run with Curv Mondays</h1>
-                        <p>Plaza del Surtidor, Poble Sec Barcelona</p>
-                    </div>
-                    <a href="#"><img src="./assets/images/plus.svg" alt=""></a>
-                </div>
-                <div class="event-card">
-                    <img src="./assets/images/event.svg" alt="">
-                    <div class="event-card-content">
-                        <h2>Wed, 27 September at 17:00</h2>
-                        <h1>Run with Curv Mondays</h1>
-                        <p>Plaza del Surtidor, Poble Sec Barcelona</p>
-                    </div>
-                    <a href="#"><img src="./assets/images/plus.svg" alt=""></a>
-                </div>
-                <div class="event-card">
-                    <img src="./assets/images/event.svg" alt="">
-                    <div class="event-card-content">
-                        <h2>Wed, 27 September at 17:00</h2>
-                        <h1>Run with Curv Mondays</h1>
-                        <p>Plaza del Surtidor, Poble Sec Barcelona</p>
-                    </div>
-                    <a href="#"><img src="./assets/images/plus.svg" alt=""></a>
-                </div>
-                <div class="event-card">
-                    <img src="./assets/images/event.svg" alt="">
-                    <div class="event-card-content">
-                        <h2>Wed, 27 September at 17:00</h2>
-                        <h1>Run with Curv Mondays</h1>
-                        <p>Plaza del Surtidor, Poble Sec Barcelona</p>
-                    </div>
-                    <a href="#"><img src="./assets/images/plus.svg" alt=""></a>
-                </div>
-            </div>
+            <div class="events-content" id="eventsContainer"></div>
         </div>
         <div class="reviews">
             <div class="reviews-header">
                 <div class="reviews-header-content">
                     <img src="./assets/images/reviews-start.svg" alt="">
-                    <h2>4.95</h2>
+                    <h2 id="rating">4.95</h2>
                     <img class="reviews-dot" src="./assets/images/dot.svg" alt="">
                     <h1>Reviews</h2>
                 </div>
                 <a href="#">See all</a>
             </div>
             <div class="swiper mySwiper">
-                <div class="swiper-wrapper" id="reviews-carousel">
-                    <div class="swiper-slide">
-                        <p>lot nisi amet vulputate imperdiet. Ut et cras ultrices etiam aenean nunc turpisc ds sdsdsdds
-                            dsds...</p>
-                        <div class="host-reviews-info">
-                            <div class="host-circle">
-                                <img src="./assets/images/coach.svg" alt="Coach">
-                            </div>
-                            <div class="host-reviews">
-                                <h2>Warren</h2>
-                                <p>1 week ago</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <p>lot nisi amet vulputate imperdiet. Ut et cras ultrices lot nisi amet vulputate imperdiet. Ut
-                            et cras ultrices lot nisi amet vulputate imperdiet. Ut et cras ultrices etiam aenean nunc
-                            turpisc ds sdsdsdds
-                            dsds...</p>
-                        <div class="host-reviews-info">
-                            <div class="host-circle">
-                                <img src="./assets/images/coach.svg" alt="Coach">
-                            </div>
-                            <div class="host-reviews">
-                                <h2>Warren</h2>
-                                <p>1 week ago</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <p>lot nisi amet vulputate imperdiet. Ut et cras ultrices etiam aenean nunc turpisc ds sdsdsdds
-                            dsds...</p>
-                        <div class="host-reviews-info">
-                            <div class="host-circle">
-                                <img src="./assets/images/coach.svg" alt="Coach">
-                            </div>
-                            <div class="host-reviews">
-                                <h2>Warren</h2>
-                                <p>1 week ago</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <p>lot nisi amet vulputate imperdiet. Ut et cras ultrices etiam aenean nunc turpisc ds sdsdsdds
-                            dsds...</p>
-                        <div class="host-reviews-info">
-                            <div class="host-circle">
-                                <img src="./assets/images/coach.svg" alt="Coach">
-                            </div>
-                            <div class="host-reviews">
-                                <h2>Warren</h2>
-                                <p>1 week ago</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="swiper-wrapper" id="reviews-carousel"></div>
             </div>
         </div>
         <div class="club">
@@ -183,38 +90,7 @@
             </div>
             <div class="club-content">
                 <div class="swiper mySwiper-club">
-                    <div class="swiper-wrapper">
-                        <a href="#" class="club-card swiper-slide">
-                            <img src="./assets/images/club.svg" alt="">
-                            <span>Hiking</span>
-                            <div class="club-text">
-                                <h2>CAM Parets</h2>
-                                <p>El CAM és un petit i modest club amb uns socis que comparteixen molt més que l'afició
-                                    per
-                                    l'Esport a la Natura i la Muntanya.</p>
-                            </div>
-                        </a>
-                        <a href="#" class="club-card swiper-slide">
-                            <img src="./assets/images/club.svg" alt="">
-                            <span>Hiking</span>
-                            <div class="club-text">
-                                <h2>CAM Parets</h2>
-                                <p>El CAM és un petit i modest club amb uns socis que comparteixen molt més que l'afició
-                                    per
-                                    l'Esport a la Natura i la Muntanya.</p>
-                            </div>
-                        </a>
-                        <a href="#" class="club-card swiper-slide">
-                            <img src="./assets/images/club.svg" alt="">
-                            <span>Hiking</span>
-                            <div class="club-text">
-                                <h2>CAM Parets</h2>
-                                <p>El CAM és un petit i modest club amb uns socis que comparteixen molt més que l'afició
-                                    per
-                                    l'Esport a la Natura i la Muntanya.</p>
-                            </div>
-                        </a>
-                    </div>
+                    <div class="swiper-wrapper" id="clubs-carousel"></div>
                 </div>
             </div>
         </div>
@@ -224,7 +100,7 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/scripts.js"></script>
 </body>
 
 </html>
