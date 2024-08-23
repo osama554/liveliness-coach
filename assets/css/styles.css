@@ -223,6 +223,7 @@ span.shimmer-effect {
     overflow: hidden;
     padding-right: 12px;
     align-items: center;
+    height: auto;
 }
 
 .event-card .event-photo {
