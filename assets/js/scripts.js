@@ -121,10 +121,18 @@ function displayUserData(userData, totalEvents) {
 }
 
 function displayEvents(events) {
-    events.sort((a, b) => new Date(b.trainingStartDateTime) - new Date(a.trainingStartDateTime));
+    const now = new Date();
+    const upcomingEvents = events.filter(event => new Date(event.trainingStartDateTime) > now);
+
     const container = document.getElementById('eventsContainer');
     container.innerHTML = '';
-    const firstFourEvents = events.slice(0, 4);
+    if (upcomingEvents.length === 0) {
+        container.innerHTML = '<p class="upcoming-events">No upcoming events</p>';
+        return;
+    }
+
+    upcomingEvents.sort((a, b) => new Date(b.trainingStartDateTime) - new Date(a.trainingStartDateTime));
+    const firstFourEvents = upcomingEvents.slice(0, 4);
 
     firstFourEvents.forEach(event => {
         const eventCard = document.createElement('div');

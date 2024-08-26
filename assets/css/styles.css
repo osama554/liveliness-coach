@@ -73,6 +73,17 @@ span.shimmer-effect {
     margin-bottom: 10px;
 }
 
+.upcoming-events {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #E7E7E7;
+    text-align: center;
+    border: 1px solid #2F2D36;
+    padding: 12px;
+    border-radius: 8px;
+}
+
 .coach-img-container img {
     width: 100%;
 }
