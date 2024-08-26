@@ -68,7 +68,7 @@ function updateNationality(data) {
     const nationality = data.nationality || "Unknown";
     const nationalityCode = data.nationalityCode.toLowerCase();
 
-    const flagImageUrl = `https://flagcdn.com/w20/${nationalityCode}.png`;
+    const flagImageUrl = `https://flagcdn.com/${nationalityCode}.svg`;
 
     document.querySelector('#userNationality').innerHTML += ` ${nationality}`;
     document.querySelector('#userNationality span').textContent = 'Nationality:';
