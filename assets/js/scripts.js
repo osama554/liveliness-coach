@@ -1,13 +1,35 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const userId = urlParams.get("userId");
+
+const userDataUrl = `https://prod-ts-liveliness-server.onrender.com/api/user/bundled/${userId}`;
+const userEventsUrl = `https://prod-ts-liveliness-server.onrender.com/api/event/admin/${userId}`;
+const userReviewsUrl = `https://prod-ts-liveliness-server.onrender.com/api/reviews/getAll/${userId}`;
+
 function showShimmer() {
-    document.querySelectorAll('h2.content, img.content, p.content').forEach(element => {
+    document.querySelectorAll('h1.content, h2.content, img.content, p.content, div.content').forEach(element => {
         element.classList.add('shimmer-effect');
+        if (element.tagName === 'DIV' && element.classList.contains('content')) {
+            element.style.position = 'relative';
+            element.querySelectorAll('*').forEach(child => {
+                child.style.visibility = 'hidden'; // Hide the child elements
+            });
+        }
     });
+    document.getElementById('toggleButton').style.visibility = 'hidden';
 }
 
 function hideShimmer() {
-    document.querySelectorAll('h2.content, img.content, p.content').forEach(element => {
+    document.querySelectorAll('h1.content, h2.content, img.content, p.content, div.content').forEach(element => {
         element.classList.remove('shimmer-effect');
+        if (element.tagName === 'DIV' && element.classList.contains('content')) {
+            element.querySelectorAll('*').forEach(child => {
+                child.style.visibility = 'visible'; // Show the child elements
+            });
+        }
     });
+    document.getElementById('toggleButton').style.visibility = 'visible';
+
 }
 
 function formatRelativeDate(dateString) {
@@ -46,7 +68,7 @@ function updateNationality(data) {
     const nationality = data.nationality || "Unknown";
     const nationalityCode = data.nationalityCode.toLowerCase();
 
-    const flagImageUrl = `https://flagcdn.com/w80/${nationalityCode}.png`;
+    const flagImageUrl = `https://flagcdn.com/w20/${nationalityCode}.png`;
 
     document.querySelector('#userNationality').innerHTML += ` ${nationality}`;
     document.querySelector('#userNationality span').textContent = 'Nationality:';
@@ -62,6 +84,9 @@ function displayUserData(userData, totalEvents) {
         "website": userData.website,
         "youTube": userData.youTube
     };
+
+    const userBioElement = document.getElementById('userBio');
+    const toggleButton = document.getElementById('toggleButton');
 
     document.getElementById('userName').textContent = userData.name;
     document.getElementById('userProfileImage').src = userData.mainProfilePhoto;
@@ -80,6 +105,19 @@ function displayUserData(userData, totalEvents) {
     document.getElementById('userLocation').textContent = userData.locationString;
     updateSocialMediaLinks(socialLinks);
     updateNationality(userData);
+
+    // Check if the text exceeds two lines
+    if (userBioElement.scrollHeight > userBioElement.clientHeight) {
+        toggleButton.style.display = 'inline';
+    } else {
+        toggleButton.style.display = 'none';
+    }
+
+    // Toggle text visibility on click
+    toggleButton.addEventListener('click', () => {
+        document.querySelector('.coach-text-container').classList.toggle('expanded');
+        toggleButton.textContent = document.querySelector('.coach-text-container').classList.contains('expanded') ? 'Show Less' : 'See More';
+    });
 }
 
 function displayEvents(events) {
@@ -150,10 +188,11 @@ function displayReviews(reviews) {
 }
 
 function displayClubs(clubs) {
+    const filteredClubs = clubs.filter((club) => userId === club.adminId);
     const clubsContainer = document.getElementById('clubs-carousel');
     clubsContainer.innerHTML = '';
 
-    clubs.forEach(club => {
+    filteredClubs.forEach(club => {
         const clubSlide = document.createElement('a');
         clubSlide.className = 'club-card swiper-slide';
         clubSlide.href = club.link;
@@ -197,14 +236,6 @@ async function makeApiRequest(url) {
     }
     return response.json();
 }
-
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const userId = urlParams.get("userId");
-
-const userDataUrl = `https://prod-ts-liveliness-server.onrender.com/api/user/bundled/${userId}`;
-const userEventsUrl = `https://prod-ts-liveliness-server.onrender.com/api/event/admin/${userId}`;
-const userReviewsUrl = `https://prod-ts-liveliness-server.onrender.com/api/reviews/getAll/${userId}`;
 
 showShimmer();
 

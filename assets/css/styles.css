@@ -25,7 +25,7 @@ img {
 }
 
 .shimmer-effect {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #cecece 75%);
+    background: linear-gradient(90deg, #cecece 25%, #e0e0e0 50%, #cecece 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
     border-radius: 4px;
@@ -252,11 +252,20 @@ span.shimmer-effect {
     color: #fff;
 }
 
+.event-card.content.shimmer-effect {
+    height: 70px;
+}
+
 .event-card-content p {
     font-size: 10px;
     font-weight: 400;
     line-height: 14px;
     color: #DADADA;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .reviews-header {
@@ -301,6 +310,30 @@ span.shimmer-effect {
     padding-top: 8px;
 }
 
+#userBio {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    /* Limit to two lines */
+    -webkit-box-orient: vertical;
+    max-height: 3em;
+    /* height based on 2 lines */
+}
+
+.coach-text-container.expanded #userBio {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    /* Remove the line clamp */
+    max-height: none;
+    /* Allow full height */
+}
+
+#toggleButton {
+    cursor: pointer;
+}
+
 #reviews-carousel .swiper-slide {
     background-color: #1F1E24;
     border-radius: 12px;
@@ -309,6 +342,18 @@ span.shimmer-effect {
     height: 150px;
     flex-direction: column;
     width: 80%;
+}
+
+#reviews-carousel .content.shimmer-effect {
+    height: 150px;
+    padding: 12px;
+    width: 100%;
+}
+
+.club-card.content.shimmer-effect {
+    height: 320px;
+    padding: 12px;
+    width: 100%;
 }
 
 .host-reviews-info {

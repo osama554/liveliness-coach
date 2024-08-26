@@ -21,9 +21,9 @@
             <div class="coach-text-container">
                 <h2 id="userName" class="content"></h2>
                 <p id="userBio" class="content"></p>
-                <span>See More</span>
+                <span id="toggleButton">See More</span>
             </div>
-            <div class="coach-desc">
+            <div class="coach-desc content">
                 <div class="coach-total-reviews">
                     <img src="./assets/images/star.svg" alt="">
                     <h2>4.5</h2>
@@ -51,11 +51,11 @@
                     <img src="./assets/images/web.svg" alt="Web">
                 </a>
             </div>
-            <div class="coach-location">
+            <div class="coach-location content">
                 <img src="./assets/images/pin.svg" alt="">
                 <h2 id="userLocation"></h2>
             </div>
-            <div class="coach-location">
+            <div class="coach-location content">
                 <div class="country-image">
                     <img id="countryFlag" src="" alt="Country Flag">
                 </div>
@@ -67,7 +67,12 @@
                 <h2>Calendar</h2>
                 <a href="#">See all</a>
             </div>
-            <div class="events-content" id="eventsContainer"></div>
+            <div class="events-content" id="eventsContainer">
+                <div class="event-card content"></div>
+                <div class="event-card content"></div>
+                <div class="event-card content"></div>
+                <div class="event-card content"></div>
+            </div>
         </div>
         <div class="reviews">
             <div class="reviews-header">
@@ -80,7 +85,9 @@
                 <a href="#">See all</a>
             </div>
             <div class="swiper mySwiper">
-                <div class="swiper-wrapper" id="reviews-carousel"></div>
+                <div class="swiper-wrapper" id="reviews-carousel">
+                    <div class="swper-slide content"></div>
+                </div>
             </div>
         </div>
         <div class="club">
@@ -90,7 +97,9 @@
             </div>
             <div class="club-content">
                 <div class="swiper mySwiper-club">
-                    <div class="swiper-wrapper" id="clubs-carousel"></div>
+                    <div class="swiper-wrapper" id="clubs-carousel">
+                        <div class="club-card content"></div>
+                    </div>
                 </div>
             </div>
         </div>
