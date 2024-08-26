@@ -121,6 +121,7 @@ function displayUserData(userData, totalEvents) {
 }
 
 function displayEvents(events) {
+    events.sort((a, b) => new Date(b.trainingStartDateTime) - new Date(a.trainingStartDateTime));
     const container = document.getElementById('eventsContainer');
     container.innerHTML = '';
     const firstFourEvents = events.slice(0, 4);
