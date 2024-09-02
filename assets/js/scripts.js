@@ -6,6 +6,11 @@ const userDataUrl = `https://prod-ts-liveliness-server.onrender.com/api/user/bun
 const userEventsUrl = `https://prod-ts-liveliness-server.onrender.com/api/event/admin/${userId}`;
 const userReviewsUrl = `https://prod-ts-liveliness-server.onrender.com/api/reviews/getAll/${userId}`;
 
+if (!userId) {
+    document.getElementById('main-content').style.display = 'none';
+    document.getElementById('error-container').style.display = 'flex';
+}
+
 function showShimmer() {
     document.querySelectorAll('h1.content, h2.content, img.content, p.content, div.content').forEach(element => {
         element.classList.add('shimmer-effect');

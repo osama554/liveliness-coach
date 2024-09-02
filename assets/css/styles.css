@@ -65,6 +65,16 @@ span.shimmer-effect {
     gap: 8px;
 }
 
+#error-container {
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 40px;
+    text-align: center;
+}
+
 .coach-img-container {
     width: 112px;
     height: 112px;
