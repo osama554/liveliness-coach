@@ -150,7 +150,6 @@ function displayEvents(events) {
             time: date.toLocaleString("en-US", { hour: "2-digit", minute: "2-digit", hour12: false })
         };
         const formattedDate = `${formattedDateParts.weekday}, ${formattedDateParts.day} ${formattedDateParts.month} at ${formattedDateParts.time}`;
-
         eventCard.innerHTML = `
             <img class="event-photo" src="${event.coverPhotoUrl}" alt="${event.title}">
             <div class="event-card-content">
@@ -158,8 +157,9 @@ function displayEvents(events) {
                 <h1>${event.title}</h1>
                 <p>${event.trainingLocationString}</p>
             </div>
-            <a href="${event.link}"><img src="./assets/images/plus.svg" alt="More"></a>
-        `;
+            <a href="https://event.linmo.app/?eventId=${event.trainingId}">
+                <img src="./assets/images/plus.svg" alt="More">
+            </a>`;
 
         container.appendChild(eventCard);
     });
@@ -209,7 +209,7 @@ function displayClubs(clubs) {
     filteredClubs.forEach(club => {
         const clubSlide = document.createElement('a');
         clubSlide.className = 'club-card swiper-slide';
-        clubSlide.href = club.link;
+        clubSlide.href = `#`;
 
         clubSlide.innerHTML = `
             <img src="${club.headerPhoto}" alt="">
@@ -227,7 +227,6 @@ function displayClubs(clubs) {
 }
 
 function updateUi(userData, userEvents, userReviews) {
-
     const userTotalEvents = userEvents.data.length;
     // UserData
     displayUserData(userData.user, userTotalEvents);
